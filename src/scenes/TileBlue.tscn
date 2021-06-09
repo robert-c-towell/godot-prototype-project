@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.329412, 0.509804, 0.890196, 1 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="CSGMesh" type="CSGMesh" parent="." groups=[
+"tile",
+]]
+mesh = SubResource( 1 )
+material = SubResource( 2 )
