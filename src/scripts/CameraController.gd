@@ -39,6 +39,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		_zoom_direction = -1
 	if event.is_action_pressed("camera_zoom_out"):
 		_zoom_direction = 1
+
 func _move(delta: float) -> void:
 	var velocity = Vector3()
 	if Input.is_action_pressed("camera_forward"):

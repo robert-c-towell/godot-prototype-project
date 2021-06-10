@@ -8,11 +8,13 @@ func buttonPressed():
 	
 	var playerCharacter = get_parent().get_parent().get_parent().playerCharacter
 	
-	if self.name == "Left":
-		playerCharacter.x -= 100
-	if self.name == "Right":
-		playerCharacter.x += 100
+	var velocity = Vector3()
 	if self.name == "Forward":
-		playerCharacter.z -= 100
+		velocity -= playerCharacter.transform.basis.z
 	if self.name == "Backward":
-		playerCharacter.z += 100
+		velocity += playerCharacter.transform.basis.z
+	if self.name == "Left":
+		velocity -= playerCharacter.transform.basis.x
+	if self.name == "Right":
+		velocity += playerCharacter.transform.basis.x
+	playerCharacter.translation += velocity * 2.1

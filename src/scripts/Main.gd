@@ -1,5 +1,8 @@
 extends Spatial
 
+func _ready():
+	$GUI/Toolbar.link_toolbar($Scene/Robot1)
+
 func _process(_delta):
 	get_input_keyboard()
 	

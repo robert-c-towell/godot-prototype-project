@@ -2,5 +2,5 @@ extends Control
 
 var playerCharacter
 
-func init(_playerCharacter: Node):
+func link_toolbar(_playerCharacter: Node):
 	playerCharacter = _playerCharacter
