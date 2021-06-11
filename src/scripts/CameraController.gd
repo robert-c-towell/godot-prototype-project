@@ -22,26 +22,36 @@ onready var elevation = $Elevation
 var _zoom_direction = 0
 onready var camera = $Elevation/Camera
 
+var isLocked = false
+
 func _process(delta: float) -> void:
-	moveHorizontal(delta)
-	moveVertical()
-	_rotate(delta)
-	_zoom(delta)
+	if !isLocked:
+		moveHorizontal(delta)
+		moveVertical()
+		rotateCamera(delta)
+		zoom(delta)
 	
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("camera_rotate_lock"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-		_last_mouse_position = get_viewport().get_mouse_position()
-		original_mouse_position = get_viewport().get_mouse_position()
-		_is_rotating = true
-	if event.is_action_released("camera_rotate_lock"):
-		_is_rotating = false
-		get_viewport().warp_mouse(original_mouse_position)
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	if event.is_action_pressed("camera_zoom_in"):
-		_zoom_direction = -1
-	if event.is_action_pressed("camera_zoom_out"):
-		_zoom_direction = 1
+	if !isLocked:
+		if event.is_action_pressed("camera_rotate_lock"):
+			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+			_last_mouse_position = get_viewport().get_mouse_position()
+			original_mouse_position = get_viewport().get_mouse_position()
+			_is_rotating = true
+		if event.is_action_released("camera_rotate_lock"):
+			_is_rotating = false
+			get_viewport().warp_mouse(original_mouse_position)
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		if event.is_action_pressed("camera_zoom_in"):
+			_zoom_direction = -1
+		if event.is_action_pressed("camera_zoom_out"):
+			_zoom_direction = 1
+		
+func _lockMovement():
+	isLocked = true
+	
+func _unlockMovement():
+	isLocked = false
 
 func moveHorizontal(delta: float) -> void:
 	var velocity = Vector3()
@@ -67,15 +77,15 @@ func moveVertical():
 	velocity = velocity.normalized()
 	translation += velocity * 2.1
 
-func _rotate(delta: float) -> void:
+func rotateCamera(delta: float) -> void:
 	if not _is_rotating or not allow_rotation:
 		return
 
-	var displacement = _get_mouse_displacement()
+	var displacement = getMouseDisplacement()
 	rotateHorizontal(delta, displacement.x)
 	rotateVertical(delta, displacement.y)
 	
-func _get_mouse_displacement() -> Vector2:
+func getMouseDisplacement() -> Vector2:
 	var current_mouse_position = get_viewport().get_mouse_position()
 	var displacement = current_mouse_position - _last_mouse_position
 	_last_mouse_position = current_mouse_position
@@ -94,7 +104,7 @@ func rotateVertical(delta: float, val: float) -> void:
 	verticalRotation = clamp(verticalRotation, -max_elevation_angle, -min_elevation_angle)
 	elevation.rotation_degrees.x = verticalRotation
 
-func _zoom(delta: float) -> void:
+func zoom(delta: float) -> void:
 	var new_zoom = clamp(camera.translation.z + zoom_speed * delta * _zoom_direction, min_zoom, max_zoom)
 	camera.translation.z = new_zoom
 	_zoom_direction *= zoom_speed_damp
