@@ -41,14 +41,15 @@ margin_left = -515.5
 margin_right = 515.5
 margin_bottom = 59.0
 mouse_filter = 2
+custom_constants/separation = 15
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Left" type="Button" parent="Spacer/Toolbar"]
-margin_left = 363.0
-margin_right = 419.0
+margin_left = 346.0
+margin_right = 402.0
 margin_bottom = 59.0
 custom_fonts/font = SubResource( 1 )
 text = "Left"
@@ -58,8 +59,8 @@ __meta__ = {
 }
 
 [node name="Right" type="Button" parent="Spacer/Toolbar"]
-margin_left = 423.0
-margin_right = 489.0
+margin_left = 417.0
+margin_right = 483.0
 margin_bottom = 59.0
 custom_fonts/font = SubResource( 1 )
 text = "Right"
@@ -69,8 +70,8 @@ __meta__ = {
 }
 
 [node name="Forward" type="Button" parent="Spacer/Toolbar"]
-margin_left = 493.0
-margin_right = 601.0
+margin_left = 498.0
+margin_right = 606.0
 margin_bottom = 59.0
 custom_fonts/font = SubResource( 1 )
 text = "Forward"
@@ -80,8 +81,8 @@ __meta__ = {
 }
 
 [node name="Backward" type="Button" parent="Spacer/Toolbar"]
-margin_left = 605.0
-margin_right = 668.0
+margin_left = 621.0
+margin_right = 684.0
 margin_bottom = 59.0
 custom_fonts/font = SubResource( 1 )
 text = "Back"

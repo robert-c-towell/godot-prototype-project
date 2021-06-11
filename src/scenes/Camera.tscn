@@ -1,3 +1,12 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
 
-[node name="Spatial" type="Spatial"]
+[ext_resource path="res://src/scripts/CameraController.gd" type="Script" id=1]
+
+[node name="CameraController" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Elevation" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0 )
+
+[node name="Camera" type="Camera" parent="Elevation"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20 )

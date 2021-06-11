@@ -4,6 +4,8 @@ export (float, 0, 1000) var movement_speed = 10
 export (float, 0, 1000, 0.1) var rotation_speed = 20
 export (int, 0, 90) var min_elevation_angle = 10
 export (int, 0, 90) var max_elevation_angle = 75
+export var min_elevation = 0
+export var max_elevation = 100
 
 export (int, 0, 1000) var min_zoom = 4
 export (int, 0, 1000) var max_zoom = 45
@@ -21,7 +23,8 @@ var _zoom_direction = 0
 onready var camera = $Elevation/Camera
 
 func _process(delta: float) -> void:
-	_move(delta)
+	moveHorizontal(delta)
+	moveVertical()
 	_rotate(delta)
 	_zoom(delta)
 	
@@ -40,7 +43,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("camera_zoom_out"):
 		_zoom_direction = 1
 
-func _move(delta: float) -> void:
+func moveHorizontal(delta: float) -> void:
 	var velocity = Vector3()
 	if Input.is_action_pressed("camera_forward"):
 		velocity -= transform.basis.z
@@ -50,16 +53,27 @@ func _move(delta: float) -> void:
 		velocity -= transform.basis.x
 	if Input.is_action_pressed("camera_right"):
 		velocity += transform.basis.x
+
 	velocity = velocity.normalized()
 	translation += velocity * delta * movement_speed * (camera.translation.z / 10)
+
+func moveVertical():
+	var velocity = Vector3()
+	if Input.is_action_pressed("camera_down"):
+		velocity += transform.basis.y
+	if Input.is_action_pressed("camera_up"):
+		velocity -= transform.basis.y
+
+	velocity = velocity.normalized()
+	translation += velocity * 2.1
 
 func _rotate(delta: float) -> void:
 	if not _is_rotating or not allow_rotation:
 		return
+
 	var displacement = _get_mouse_displacement()
-	_rotate_left_right(delta, displacement.x)
-	
-	_elevate(delta, displacement.y)
+	rotateHorizontal(delta, displacement.x)
+	rotateVertical(delta, displacement.y)
 	
 func _get_mouse_displacement() -> Vector2:
 	var current_mouse_position = get_viewport().get_mouse_position()
@@ -67,18 +81,18 @@ func _get_mouse_displacement() -> Vector2:
 	_last_mouse_position = current_mouse_position
 	return displacement
 
-func _rotate_left_right(delta: float, val: float) -> void:
+func rotateHorizontal(delta: float, val: float) -> void:
 	rotation_degrees.y -= val * delta * rotation_speed
 
-func _elevate(delta: float, val: float) -> void:
-	var new_elevation = elevation.rotation_degrees.x
+func rotateVertical(delta: float, val: float) -> void:
+	var verticalRotation = elevation.rotation_degrees.x
 	if inverted_y:
-		new_elevation += val * delta * rotation_speed
+		verticalRotation += val * delta * rotation_speed
 	else:
-		new_elevation -= val * delta * rotation_speed
+		verticalRotation -= val * delta * rotation_speed
 
-	new_elevation = clamp(new_elevation, -max_elevation_angle, -min_elevation_angle)
-	elevation.rotation_degrees.x = new_elevation
+	verticalRotation = clamp(verticalRotation, -max_elevation_angle, -min_elevation_angle)
+	elevation.rotation_degrees.x = verticalRotation
 
 func _zoom(delta: float) -> void:
 	var new_zoom = clamp(camera.translation.z + zoom_speed * delta * _zoom_direction, min_zoom, max_zoom)
