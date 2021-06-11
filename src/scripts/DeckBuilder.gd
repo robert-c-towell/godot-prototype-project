@@ -5,4 +5,4 @@ func _process(_delta):
 	
 func get_input_keyboard():
 	if Input.is_action_pressed("exit"):
-		get_tree().quit()
+		get_tree().change_scene("res://src/guis/MainMenu.tscn")
