@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/cards/CardBase.gd" type="Script" id=1]
+[ext_resource path="res://assets/cards/graphics/Gold_Border.png" type="Texture" id=2]
+[ext_resource path="res://assets/cards/graphics/Back_Texture.png" type="Texture" id=3]
+[ext_resource path="res://assets/fonts/NewAmsterdam-Italic.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 28
+font_data = ExtResource( 4 )
+
+[node name="CardBase" type="MarginContainer"]
+margin_right = 250.0
+margin_bottom = 350.0
+rect_pivot_offset = Vector2( 125, 175 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Card" type="Sprite" parent="."]
+centered = false
+
+[node name="Border" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 250.0
+margin_bottom = 350.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_right = 250.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 0, 15 )
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+margin_top = 19.0
+margin_right = 250.0
+margin_bottom = 19.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel"]
+margin_top = 4.0
+margin_right = 250.0
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 1 )
+text = "350"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 23.0
+margin_right = 250.0
+margin_bottom = 23.0
