@@ -1,22 +1,22 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/guis/CardManager.gd" type="Script" id=1]
+[ext_resource path="res://assets/cards/graphics/empty.png" type="Texture" id=2]
 
 [sub_resource type="StreamTexture" id=4]
 flags = 4
 load_path = "res://.import/card_back.png-4141cebca82026ae1185b1f131d9280f.stex"
 
-[sub_resource type="StreamTexture" id=5]
-flags = 4
-load_path = "res://.import/card_front.png-c4a9a3eae266e3397bd889762a9b673a.stex"
-
 [sub_resource type="GDScript" id=1]
 script/source = "extends TextureButton
 
+var deckSize
+
 func _pressed():
-	var deckSize = get_parent().get_parent().get_parent().drawCard()
+	deckSize = get_parent().get_parent().get_parent().drawCard()
 	
 	if deckSize <= 0:
+		self.mouse_filter = MOUSE_FILTER_IGNORE
 		self.disabled = true
 "
 
@@ -36,6 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -208.0
 margin_top = -278.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -43,6 +44,7 @@ __meta__ = {
 [node name="Control" type="Control" parent="Spacer"]
 margin_right = 208.0
 margin_bottom = 278.0
+mouse_filter = 2
 
 [node name="TextureButton" type="TextureButton" parent="Spacer/Control"]
 margin_right = 250.0
@@ -51,7 +53,7 @@ rect_scale = Vector2( 0.75, 0.75 )
 texture_normal = SubResource( 4 )
 texture_pressed = SubResource( 4 )
 texture_hover = SubResource( 4 )
-texture_disabled = SubResource( 5 )
+texture_disabled = ExtResource( 2 )
 script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
