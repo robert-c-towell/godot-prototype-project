@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/guis/CardManager.gd" type="Script" id=1]
+[ext_resource path="res://assets/cards/graphics/card_back.png" type="Texture" id=2]
+[ext_resource path="res://assets/cards/graphics/card_front.png" type="Texture" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends TextureButton
+
+func _pressed():
+	var deckSize = get_parent().get_parent().drawCard()
+	
+	if deckSize <= 0:
+		self.disabled = true
+"
+
+[node name="CardManager" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Deck" type="Node2D" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="Deck"]
+margin_left = 1640.45
+margin_top = 696.579
+margin_right = 1890.45
+margin_bottom = 1046.58
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 2 )
+texture_disabled = ExtResource( 3 )
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hand" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Discard" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0

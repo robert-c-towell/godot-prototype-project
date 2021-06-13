@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/guis/Toolbar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/guis/InGameMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/scripts/Sandbox.gd" type="Script" id=3]
 [ext_resource path="res://src/scenes/Camera.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/scripts/TileGenerator.gd" type="Script" id=5]
+[ext_resource path="res://src/guis/CardManager.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -38,6 +39,9 @@ __meta__ = {
 }
 
 [node name="Toolbar" parent="GUI" instance=ExtResource( 1 )]
+visible = false
+
+[node name="CardManager" parent="GUI" instance=ExtResource( 6 )]
 
 [node name="InGameMenu" parent="GUI" instance=ExtResource( 2 )]
 visible = false

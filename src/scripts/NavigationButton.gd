@@ -8,3 +8,5 @@ func _ready():
 func onButtonPressed():
 	if navigationPath != "":
 		get_tree().change_scene(navigationPath)
+	else:
+		get_tree().quit()
