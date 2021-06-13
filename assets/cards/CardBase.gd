@@ -6,7 +6,7 @@ onready var cardEnums = preload("res://assets/cards/cardEnums.gd")
 onready var cardInfo = cardEnums.DATA[cardEnums.get(cardName)]
 onready var cardImagePath = str("res://assets/cards/graphics/",cardInfo.image)
 
-onready var originalScale = rect_scale
+onready var originalScale = Vector2(0.75,0.75)
 var startingPosition = 0
 var targetPosition = 0
 var defaultPosition = Vector2()
@@ -15,7 +15,7 @@ var targetRotation = 0
 var startingScale = Vector2()
 var zoomSize = 2
 
-var cardScale = Vector2(125,175)
+var cardSize = Vector2(125,175)
 
 var setup = true
 var reorganizeNeighbors = true
@@ -49,7 +49,7 @@ func setupCard():
 	$Front.visible = false
 	$VBoxContainer.visible = false
 	
-	$Focus.rect_scale *= rect_size/$Focus.rect_size
+	rect_scale = originalScale
 
 	if cardInfo.image:
 		$VBoxContainer/TitleTextSpacer/HBoxContainer/MarginContainer/TitleImage.texture = load(cardImagePath)
@@ -173,7 +173,7 @@ func _on_TextureButton_mouse_entered():
 		InHand, ReorganizeHand:
 			setup = true
 			targetPosition = defaultPosition
-			targetPosition.y = get_viewport().size.y - ((rect_size.y/2)*zoomSize + (rect_size.y/2))
+			targetPosition.y = get_viewport().size.y - ((cardSize.y/1.2)*zoomSize + (cardSize.y/1.2))
 			state = FocusInHand
 
 func _on_TextureButton_mouse_exited():

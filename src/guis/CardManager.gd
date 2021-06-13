@@ -9,10 +9,10 @@ export var minAngle = 20
 var maxAngle = 180 - minAngle
 
 onready var cardArcCenter = get_viewport().size * Vector2(0.5, 1.275)
-onready var horizontalRadius = get_viewport().size.x*0.45
-onready var verticalRadius = get_viewport().size.y*0.5
+onready var horizontalRadius = get_viewport().size.x*0.5
+onready var verticalRadius = get_viewport().size.y*0.4
 var angle = deg2rad(90)
-var cardSpread = 0.25
+var cardSpread = 0.15
 var arcAngleVector = Vector2()
 
 func _ready():
@@ -21,7 +21,7 @@ func _ready():
 func drawCard():	
 	var newCard = CardBase.instance()
 	newCard.cardName = deck.pop_front()
-	prepareCard(newCard,  $Hand.get_child_count(), CardStates.DrawingCard, $Deck/TextureButton.rect_position, 0)
+	prepareCard(newCard,  $Hand.get_child_count(), CardStates.DrawingCard, $Spacer/Control/TextureButton.rect_global_position - Vector2(125/4,175/4), 0)
 	
 	var i = 0
 	for card in $Hand.get_children():

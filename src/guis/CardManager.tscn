@@ -14,7 +14,7 @@ load_path = "res://.import/card_front.png-c4a9a3eae266e3397bd889762a9b673a.stex"
 script/source = "extends TextureButton
 
 func _pressed():
-	var deckSize = get_parent().get_parent().drawCard()
+	var deckSize = get_parent().get_parent().get_parent().drawCard()
 	
 	if deckSize <= 0:
 		self.disabled = true
@@ -29,13 +29,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Deck" type="Node2D" parent="."]
+[node name="Spacer" type="MarginContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -208.0
+margin_top = -278.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="TextureButton" type="TextureButton" parent="Deck"]
-margin_left = 1640.45
-margin_top = 696.579
-margin_right = 1890.45
-margin_bottom = 1046.58
+[node name="Control" type="Control" parent="Spacer"]
+margin_right = 208.0
+margin_bottom = 278.0
+
+[node name="TextureButton" type="TextureButton" parent="Spacer/Control"]
+margin_right = 250.0
+margin_bottom = 350.0
+rect_scale = Vector2( 0.75, 0.75 )
 texture_normal = SubResource( 4 )
 texture_pressed = SubResource( 4 )
 texture_hover = SubResource( 4 )
