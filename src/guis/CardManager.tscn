@@ -1,8 +1,14 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/guis/CardManager.gd" type="Script" id=1]
-[ext_resource path="res://assets/cards/graphics/card_back.png" type="Texture" id=2]
-[ext_resource path="res://assets/cards/graphics/card_front.png" type="Texture" id=3]
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+load_path = "res://.import/card_back.png-4141cebca82026ae1185b1f131d9280f.stex"
+
+[sub_resource type="StreamTexture" id=5]
+flags = 4
+load_path = "res://.import/card_front.png-c4a9a3eae266e3397bd889762a9b673a.stex"
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends TextureButton
@@ -30,10 +36,10 @@ margin_left = 1640.45
 margin_top = 696.579
 margin_right = 1890.45
 margin_bottom = 1046.58
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 2 )
-texture_hover = ExtResource( 2 )
-texture_disabled = ExtResource( 3 )
+texture_normal = SubResource( 4 )
+texture_pressed = SubResource( 4 )
+texture_hover = SubResource( 4 )
+texture_disabled = SubResource( 5 )
 script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

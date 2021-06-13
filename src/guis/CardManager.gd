@@ -36,6 +36,7 @@ func prepareCard(card: Node, cardNumber, state, startingPosition, startingRotati
 	arcAngleVector = Vector2(horizontalRadius * cos(angle), -verticalRadius * sin(angle))
 	card.startingPosition = startingPosition
 	card.targetPosition = cardArcCenter + arcAngleVector - card.rect_size/2
+	card.defaultPosition = card.targetPosition
 	card.startingRotation = startingRotation
 	card.targetRotation = (90 - rad2deg(angle)) / 4
 	
