@@ -1,9 +1,9 @@
 enum {
-	InHand
 	InMovementQueue
 	InActionQueue
 	InMouse
-	FocusInHand
+	InFocus
+	ExitFocus
 	DrawingCard
 	ReorganizeHand
 }

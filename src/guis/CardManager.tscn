@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://src/guis/CardManager.gd" type="Script" id=1]
+[ext_resource path="res://src/guis/CardManager2.gd" type="Script" id=1]
 [ext_resource path="res://assets/cards/graphics/empty.png" type="Texture" id=2]
+[ext_resource path="res://src/guis/Hand.gd" type="Script" id=3]
 
-[sub_resource type="StreamTexture" id=4]
-flags = 4
+[sub_resource type="StreamTexture" id=1]
+flags = 5
 load_path = "res://.import/card_back.png-4141cebca82026ae1185b1f131d9280f.stex"
 
-[sub_resource type="GDScript" id=1]
+[sub_resource type="GDScript" id=2]
 script/source = "extends TextureButton
 
 var deckSize
@@ -50,11 +51,11 @@ mouse_filter = 2
 margin_right = 250.0
 margin_bottom = 350.0
 rect_scale = Vector2( 0.75, 0.75 )
-texture_normal = SubResource( 4 )
-texture_pressed = SubResource( 4 )
-texture_hover = SubResource( 4 )
+texture_normal = SubResource( 1 )
+texture_pressed = SubResource( 1 )
+texture_hover = SubResource( 1 )
 texture_disabled = ExtResource( 2 )
-script = SubResource( 1 )
+script = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -62,6 +63,7 @@ __meta__ = {
 [node name="Hand" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -69,3 +71,6 @@ __meta__ = {
 [node name="Discard" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

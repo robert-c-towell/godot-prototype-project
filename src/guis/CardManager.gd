@@ -4,13 +4,13 @@ const deck = ["forward","backward","forward","left","left","right","right","forw
 
 const CardBase = preload("res://assets/cards/CardBase.tscn")
 const CardStates = preload("res://assets/cards/CardStates.gd")
+const CardTypes = preload("res://assets/cards/cardEnums.gd")
 
-export var minAngle = 20
-var maxAngle = 180 - minAngle
+var playerCharacter
 
 onready var cardArcCenter = get_viewport().size * Vector2(0.5, 1.275)
-onready var horizontalRadius = get_viewport().size.x*0.5
-onready var verticalRadius = get_viewport().size.y*0.4
+onready var horizontalRadius = get_viewport().size.x*0.45
+onready var verticalRadius = get_viewport().size.y*0.325
 var angle = deg2rad(90)
 var cardSpread = 0.15
 var arcAngleVector = Vector2()
@@ -48,3 +48,10 @@ func prepareCard(card: Node, cardNumber, state, startingPosition, startingRotati
 		card.startingPosition = startingPosition
 	elif card.state == CardStates.DrawingCard:
 		card.startingPosition = card.targetPosition - ((card.targetPosition - card.rect_position)/(1-card.t))
+		
+func cardClicked(card: Node):
+	match card.cardName:
+		"forward", "backward":
+			playerCharacter.moveRobot(card.cardName, 1)
+		"left", "right":
+			playerCharacter.rotateRobot(card.cardName)
