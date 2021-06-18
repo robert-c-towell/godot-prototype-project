@@ -32,7 +32,7 @@ const FOCUSTIME = 0.2
 var state
 var previousState
 
-var selectedOption
+var selectedOption = 1
 
 func _ready():
 	setup()

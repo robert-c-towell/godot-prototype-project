@@ -4,7 +4,7 @@ var showInGameMenu = false
 
 func _ready():
 	$GUI/Toolbar.link_toolbar($Scene/Robot1)
-	$GUI/CardManager.playerCharacter = $Scene/Robot1
+	$GUI/CardManager.playerCharacter = $Scene/PlayerCharacter
 
 func _process(_delta):
 	get_input_keyboard()
