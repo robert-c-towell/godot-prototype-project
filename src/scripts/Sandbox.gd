@@ -9,6 +9,8 @@ func _ready():
 func _process(_delta):
 	get_input_keyboard()
 	
+	$GUI/Label.text = str(int($Scene/PlayerCharacter.rotation_degrees.y))
+	
 func get_input_keyboard():
 	if Input.is_action_just_released("exit"):
 		showInGameMenu = !showInGameMenu

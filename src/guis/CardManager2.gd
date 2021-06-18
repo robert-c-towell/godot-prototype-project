@@ -14,7 +14,11 @@ var discard = []
 var playerCharacter
 
 func cardClicked(card: Node):
-	playerCharacter.moveRobot(card.cardName, card.selectedOption)
+	match card.cardName:
+		"forward", "backward":
+			playerCharacter.moveRobot(card.cardName, card.selectedOption)
+		"left", "right":
+			playerCharacter.rotateRobot(card.cardName)
 
 func drawCard():
 	if (deck.size() > 0):

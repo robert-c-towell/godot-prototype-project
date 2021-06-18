@@ -2,40 +2,91 @@ extends KinematicBody
 
 const TILESIZE = 2.1
 
-var t = 0
-var moveDirection
-var moveDistance = 0
+var moveSpeed = 6
+var rotateSpeed = 1
+var targetPosition = Vector3()
+var targetRotation = Vector3()
 var isMoving = false
-var rotateDirection
 var isRotating = false
 
-var velocity = Vector3()
-var targetPosition = Vector3()
-var speed = 15
+func _process(delta):
+	if isMoving:
+		moveR()
+#	if isRotating:
+#		rotateR()
+
+func moveR():
+	var velocity
+	var distance = targetPosition.distance_to(transform.origin)
+	if distance > 0.05:
+		velocity = targetPosition - transform.origin
+		velocity = velocity.normalized() * distance * moveSpeed
+		move_and_slide(velocity)
+		rotation_degrees.y = normalizeRotation(rotation_degrees.y)
+	else:
+		transform.origin = targetPosition
+		rotation_degrees.y = normalizeRotation(rotation_degrees.y)
+		isMoving = false
+
+func rotateR():
+	var velocity
+	var angle = abs(rotation_degrees.y - targetPosition.y)
+	if angle > 0.05:
+		rotation_degrees.y += angle * rotateSpeed
+	else:
+		rotation_degrees = targetPosition
+		isMoving = false
 
 func moveRobot(direction, distance):
-	targetPosition = transform.origin
-	targetPosition.z -= distance * TILESIZE
-	velocity = targetPosition - transform.origin
+	if !isMoving:
+		targetPosition = transform.origin
+		
+	var realDistance = distance * TILESIZE
+	match int(rotation_degrees.y):
+		0:
+			match direction:
+				"forward":
+					targetPosition.z -= realDistance
+				"backward":
+					targetPosition.z += realDistance
+		90:
+			match direction:
+				"forward":
+					targetPosition.x -= realDistance
+				"backward":
+					targetPosition.x += realDistance
+		180, -180:
+			match direction:
+				"forward":
+					targetPosition.z += realDistance
+				"backward":
+					targetPosition.z -= realDistance
+		270, -270:
+			match direction:
+				"forward":
+					targetPosition.x += realDistance
+				"backward":
+					targetPosition.x -= realDistance
 	isMoving = true
-	moveDirection = direction
-	moveDistance = distance
-#	match moveDirection:
-#		"forward":
-#			velocity.z -= 1
-#		"backward":
-#			velocity += 1
+
+func normalizeRotation(r):
+	if r < 0:
+		r += 360
+	r = fmod(r, 360.0)
+	return r
 
 func rotateRobot(direction):
+#	if !isRotating:
+#		targetRotation = rotation_degrees
 	match direction:
 		"left":
+#			targetRotation.y += 90
 			rotation_degrees.y += 90
 		"right":
+#			targetRotation.y -= 90
 			rotation_degrees.y -= 90
 		"u-turn":
+#			targetRotation.y += 180
 			rotation_degrees.y += 180
-
-func _physics_process(delta):
-	if isMoving:
-		velocity = velocity.normalized() * speed
-		velocity = move_and_slide(velocity)
+	rotation_degrees.y = normalizeRotation(rotation_degrees.y)
+#	isRotating = true
