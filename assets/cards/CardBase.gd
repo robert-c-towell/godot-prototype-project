@@ -85,6 +85,25 @@ func _input(event):
 					state = CardStates.InMouse
 					setup = true
 
+func _on_TextureButton_mouse_entered():
+	match state:
+		CardStates.ReorganizeHand:
+			setup = true
+			get_parent().focus(self)
+			state = CardStates.InFocus
+
+func _on_TextureButton_mouse_exited():
+	match state:
+		CardStates.InFocus:
+			setup = true
+			targetPosition = defaultPosition
+			state = CardStates.ExitFocus
+
+func _on_Focus_pressed():
+	if state != CardStates.DrawingCard:
+		get_parent().get_parent().cardClicked(self)
+
+
 #func _physics_process(delta):
 #	match state:
 #		CardStates.InHand:
@@ -183,21 +202,3 @@ func _input(event):
 #	startingScale = rect_scale
 #	t = 0
 #	setup = false
-
-func _on_TextureButton_mouse_entered():
-	match state:
-		CardStates.ReorganizeHand:
-			setup = true
-			get_parent().focus(self)
-			state = CardStates.InFocus
-
-func _on_TextureButton_mouse_exited():
-	match state:
-		CardStates.InFocus:
-			setup = true
-			targetPosition = defaultPosition
-			state = CardStates.ExitFocus
-
-func _on_Focus_pressed():
-	if state != CardStates.DrawingCard:
-		get_parent().get_parent().cardClicked(self)

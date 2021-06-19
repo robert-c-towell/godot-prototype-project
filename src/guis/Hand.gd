@@ -29,6 +29,10 @@ func addCard(card: Node):
 	
 	card.state = CardStates.DrawingCard
 
+func removeCard(card: Node):
+	card.targetRotation = 0
+	card.state = CardStates.DiscardingCard
+
 func _physics_process(delta):
 	reorganizeCards(delta)
 
@@ -54,6 +58,17 @@ func reorganizeCards(delta):
 					card.rect_scale.x = card.originalScale.x
 					card.t = 0
 					card.state = CardStates.ReorganizeHand
+			CardStates.DiscardingCard:
+				if card.t <= 1:
+					card.rect_position = card.startingPosition.linear_interpolate(card.targetPosition, card.t)
+					card.rect_rotation = card.startingRotation * (1-card.t) + card.targetRotation*card.t
+					card.rect_scale.x = card.originalScale.x * abs(2*card.t - 1)
+					card.t += delta / float(DRAWTIME)
+				else:
+					card.rect_position = card.targetPosition
+					card.rect_rotation = card.targetRotation
+					card.rect_scale.x = card.originalScale.x
+					card.t = 0
 			CardStates.InFocus:
 				cardInFocusNumber = card.cardNumber
 				if card.setup:

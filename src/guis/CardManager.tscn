@@ -1,25 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/guis/CardManager2.gd" type="Script" id=1]
 [ext_resource path="res://assets/cards/graphics/empty.png" type="Texture" id=2]
 [ext_resource path="res://src/guis/Hand.gd" type="Script" id=3]
+[ext_resource path="res://assets/cards/graphics/card_back.png" type="Texture" id=4]
+[ext_resource path="res://src/guis/Deck.gd" type="Script" id=5]
+[ext_resource path="res://src/guis/Discard.gd" type="Script" id=6]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 5
 load_path = "res://.import/card_back.png-4141cebca82026ae1185b1f131d9280f.stex"
-
-[sub_resource type="GDScript" id=2]
-script/source = "extends TextureButton
-
-var deckSize
-
-func _pressed():
-	deckSize = get_parent().get_parent().get_parent().drawCard()
-	
-	if deckSize <= 0:
-		self.mouse_filter = MOUSE_FILTER_IGNORE
-		self.disabled = true
-"
 
 [node name="CardManager" type="Control"]
 anchor_right = 1.0
@@ -30,32 +20,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Spacer" type="MarginContainer" parent="."]
-anchor_left = 1.0
+[node name="DeckSpacer" type="MarginContainer" parent="."]
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -208.0
-margin_top = -278.0
+margin_top = -280.0
+margin_right = 210.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" type="Control" parent="Spacer"]
-margin_right = 208.0
-margin_bottom = 278.0
+[node name="Control" type="Control" parent="DeckSpacer"]
+margin_right = 210.0
+margin_bottom = 280.0
 mouse_filter = 2
 
-[node name="TextureButton" type="TextureButton" parent="Spacer/Control"]
-margin_right = 250.0
-margin_bottom = 350.0
+[node name="TextureButton" type="TextureButton" parent="DeckSpacer/Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -187.5
+margin_top = -0.5
+margin_right = 62.5
+margin_bottom = 349.5
 rect_scale = Vector2( 0.75, 0.75 )
 texture_normal = SubResource( 1 )
 texture_pressed = SubResource( 1 )
 texture_hover = SubResource( 1 )
 texture_disabled = ExtResource( 2 )
-script = SubResource( 2 )
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -68,9 +60,32 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Discard" type="Control" parent="."]
+[node name="DiscardSpacer" type="MarginContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -210.0
+margin_top = -280.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="DiscardSpacer"]
+margin_right = 210.0
+margin_bottom = 280.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="DiscardSpacer/Control"]
 margin_right = 40.0
 margin_bottom = 40.0
+rect_scale = Vector2( 0.75, 0.75 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 4 )
+texture_disabled = ExtResource( 2 )
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
