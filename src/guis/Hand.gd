@@ -83,6 +83,7 @@ func reorganizeCards(delta):
 					self.remove_child(card)
 					cardDiscarded = true
 					cardInFocusNumber = -1
+					get_parent().drawCard()
 
 			CardStates.InFocus:
 				cardInFocusNumber = card.cardNumber

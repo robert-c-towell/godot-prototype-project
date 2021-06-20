@@ -13,6 +13,14 @@ var discardPile = []
 
 var playerCharacter
 
+func _ready():
+	var initialWait = 1
+	yield(get_tree().create_timer(initialWait), "timeout")
+	for n in 5:
+		drawCard()
+		var drawWait = 0.25
+		yield(get_tree().create_timer(drawWait), "timeout")
+
 func cardClicked(card: Node):
 	match card.cardName:
 		"forward", "backward":
@@ -31,6 +39,8 @@ func drawCard():
 		newCard.cardName = deck.pop_front()
 		newCard.startingPosition = $DeckSpacer/Control/TextureButton.rect_global_position - (newCard.cardSize / 4)
 		$Hand.addCard(newCard)
+	else:
+		$DeckSpacer/Control/TextureButton.empty()
 	return deck.size()
 
 func discardCard(card: Node):
