@@ -1,15 +1,20 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/guis/CardManager2.gd" type="Script" id=1]
 [ext_resource path="res://assets/cards/graphics/empty.png" type="Texture" id=2]
 [ext_resource path="res://src/guis/Hand.gd" type="Script" id=3]
-[ext_resource path="res://assets/cards/graphics/card_front.png" type="Texture" id=4]
+[ext_resource path="res://assets/cards/graphics/card_front_grid.png" type="Texture" id=4]
 [ext_resource path="res://src/guis/Deck.gd" type="Script" id=5]
 [ext_resource path="res://src/guis/Discard.gd" type="Script" id=6]
+[ext_resource path="res://assets/fonts/NewAmsterdam-Italic.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 5
 load_path = "res://.import/card_back.png-4141cebca82026ae1185b1f131d9280f.stex"
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = ExtResource( 7 )
 
 [node name="CardManager" type="Control"]
 anchor_right = 1.0
@@ -36,11 +41,9 @@ margin_bottom = 280.0
 mouse_filter = 2
 
 [node name="TextureButton" type="TextureButton" parent="DeckSpacer/Control"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -187.5
+margin_left = 22.5
 margin_top = -0.5
-margin_right = 62.5
+margin_right = 272.5
 margin_bottom = 349.5
 rect_scale = Vector2( 0.75, 0.75 )
 texture_normal = SubResource( 1 )
@@ -48,6 +51,16 @@ texture_pressed = SubResource( 1 )
 texture_hover = SubResource( 1 )
 texture_disabled = ExtResource( 2 )
 script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeckN" type="Label" parent="DeckSpacer/Control"]
+margin_top = -50.0
+margin_right = 210.0
+custom_fonts/font = SubResource( 2 )
+text = "8"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -93,6 +106,16 @@ texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 4 )
 texture_disabled = ExtResource( 2 )
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DiscardN" type="Label" parent="DiscardSpacer/Control"]
+margin_top = -50.0
+margin_right = 210.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -8,16 +8,16 @@
 [ext_resource path="res://src/scripts/Sandbox.gd" type="Script" id=6]
 [ext_resource path="res://src/scenes/PlayerCharacter.gd" type="Script" id=8]
 
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="BoxShape" id=8]
 
-[sub_resource type="PrismMesh" id=2]
+[sub_resource type="PrismMesh" id=9]
 size = Vector3( 2, 2, 1 )
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=10]
 
-[sub_resource type="BoxShape" id=4]
+[sub_resource type="BoxShape" id=11]
 
-[sub_resource type="CubeMesh" id=5]
+[sub_resource type="CubeMesh" id=12]
 
 [sub_resource type="ConvexPolygonShape" id=6]
 
@@ -25,10 +25,10 @@ size = Vector3( 2, 2, 1 )
 left_to_right = 0.0
 size = Vector3( 2, 1, 2 )
 
-[sub_resource type="SpatialMaterial" id=8]
+[sub_resource type="SpatialMaterial" id=13]
 albedo_color = Color( 0.945098, 0.658824, 0.658824, 1 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=14]
 size = 100
 font_data = ExtResource( 5 )
 
@@ -44,12 +44,12 @@ script = ExtResource( 8 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/PlayerCharacter"]
 transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0.5, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 8 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/PlayerCharacter/CollisionShape"]
 transform = Transform( 1, 0, 0, 0, -0.00743508, 1.99999, 0, -0.999993, -0.00371754, 0, 0, 0 )
-mesh = SubResource( 2 )
-material = SubResource( 3 )
+mesh = SubResource( 9 )
+material = SubResource( 10 )
 
 [node name="Level" type="Spatial" parent="Scene"]
 
@@ -58,90 +58,90 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -38 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody2" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -40.0295 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody2/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody3" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -42.0763 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody3/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody4" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -44.1111 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody4/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody37" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -46.1932 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody37"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody37/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody38" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -48.2227 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody38"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody38/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody141" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -4.07576, 1, -48.2522 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody141"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody141/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody39" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50.2695 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody39"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody39/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody40" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -52.3043 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody40"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody40/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody61" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -50.2744 )
@@ -170,10 +170,10 @@ transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -4.07576, 1, -46.1912 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody142"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody142/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody143" type="StaticBody" parent="Scene/Level"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.06464, 1, -46.2129 )
@@ -191,10 +191,10 @@ transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -4.07576, 1, -44.146 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody144"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody144/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody145" type="StaticBody" parent="Scene/Level"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.06464, 1, -44.1525 )
@@ -212,90 +212,90 @@ transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -4.07576, 1, -42.087 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody146"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody146/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody148" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -4.07576, 1, -40.0459 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody148"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody148/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody150" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -2.04017, 1, -40.0459 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody150"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody150/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody151" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -2.04017, 1, -38.0082 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody151"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody151/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody152" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0.0026207, 1, -38.0082 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody152"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody152/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody153" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -4.08049, 1, -38.0082 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody153"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody153/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody154" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -0.0100982, 1, -35.9474 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody154"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody154/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody155" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -2.05814, 1, -35.9474 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody155"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody155/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody156" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.5, 0, 0, 0, 1, -4.10777, 1, -35.9474 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody156"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody156/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody147" type="StaticBody" parent="Scene/Level"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.06464, 1, -42.0519 )
@@ -419,1164 +419,1172 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1813, 0, -38 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody21"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody21/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody22" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1813, 0, -40.0295 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody22"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody22/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody23" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1813, 0, -42.0763 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody23"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody23/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody57" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1813, 0, -46.1932 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody57"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody57/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody58" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1813, 0, -48.2227 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody58"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody58/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody59" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1813, 0, -50.2695 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody59"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody59/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody60" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1813, 0, -52.3043 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody60"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody60/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody29" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1234, 0, -38 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody29"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody29/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody30" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1234, 0, -40.0295 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody30"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody30/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody31" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1234, 0, -42.0763 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody31"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody31/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody32" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1234, 0, -44.1111 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody32"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody32/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody65" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1234, 0, -46.1932 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody65"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody65/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody66" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1234, 0, -48.2227 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody66"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody66/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody67" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1234, 0, -50.2695 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody67"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody67/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody33" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2064, 0, -38 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody33"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody33/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody35" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2064, 0, -42.0763 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody35"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody35/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody36" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2064, 0, -44.1111 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody36"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody36/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody69" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2064, 0, -46.1932 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody69"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody69/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody70" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2064, 0, -48.2227 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody70"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody70/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody71" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2064, 0, -50.2695 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody71"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody71/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody72" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2064, 0, -52.3043 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody72"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody72/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody73" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.281, 0, -38 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody73"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody73/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody74" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.281, 0, -40.0295 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody74"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody74/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody75" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.281, 0, -42.0763 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody75"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody75/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody76" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.281, 0, -44.1111 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody76"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody76/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody77" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.281, 0, -46.1932 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody77"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody77/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody78" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.281, 0, -48.2227 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody78"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody78/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody79" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.281, 0, -50.2695 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody79"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody79/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody80" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.281, 0, -52.3043 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody80"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody80/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody5" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0236, 0, -38 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody5/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody7" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0236, 0, -42.0763 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody7/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody8" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0236, 0, -44.1111 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody8"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody8/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody41" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0236, 0, -46.1932 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody41"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody41/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody136" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0236, 0, -46.1932 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody136"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody136/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody48" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.07, 0, 0, 0, 1, 2.0236, 0.14492, -46.1932 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody48"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody48/CollisionShape"]
-mesh = SubResource( 5 )
-material = SubResource( 8 )
+mesh = SubResource( 12 )
+material = SubResource( 13 )
 
 [node name="StaticBody137" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.07, 0, 0, 0, 1, 2.0236, 0.14492, -48.3088 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody137"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody137/CollisionShape"]
-mesh = SubResource( 5 )
-material = SubResource( 8 )
+mesh = SubResource( 12 )
+material = SubResource( 13 )
 
 [node name="StaticBody68" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.07, 0, 0, 0, 1, 4.053, 0.14492, -46.1932 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody68"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody68/CollisionShape"]
-mesh = SubResource( 5 )
-material = SubResource( 8 )
+mesh = SubResource( 12 )
+material = SubResource( 13 )
 
 [node name="StaticBody121" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.07, 0, 0, 0, 1, 6.09346, 0.14492, -46.1932 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody121"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody121/CollisionShape"]
-mesh = SubResource( 5 )
-material = SubResource( 8 )
+mesh = SubResource( 12 )
+material = SubResource( 13 )
 
 [node name="StaticBody122" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.07, 0, 0, 0, 1, 8.13593, 0.14492, -46.1932 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody122"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody122/CollisionShape"]
-mesh = SubResource( 5 )
-material = SubResource( 8 )
+mesh = SubResource( 12 )
+material = SubResource( 13 )
 
 [node name="StaticBody123" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.07, 0, 0, 0, 1, 10.1738, 0.14492, -46.1932 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody123"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody123/CollisionShape"]
-mesh = SubResource( 5 )
-material = SubResource( 8 )
+mesh = SubResource( 12 )
+material = SubResource( 13 )
 
 [node name="StaticBody124" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.07, 0, 0, 0, 1, 12.2441, 0.14492, -46.1932 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody124"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody124/CollisionShape"]
-mesh = SubResource( 5 )
-material = SubResource( 8 )
+mesh = SubResource( 12 )
+material = SubResource( 13 )
 
 [node name="StaticBody125" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.07, 0, 0, 0, 1, 14.2373, 0.14492, -46.1932 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody125"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody125/CollisionShape"]
-mesh = SubResource( 5 )
-material = SubResource( 8 )
+mesh = SubResource( 12 )
+material = SubResource( 13 )
 
 [node name="StaticBody126" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.07, 0, 0, 0, 1, 14.2373, 0.14492, -48.2189 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody126"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody126/CollisionShape"]
-mesh = SubResource( 5 )
-material = SubResource( 8 )
+mesh = SubResource( 12 )
+material = SubResource( 13 )
 
 [node name="StaticBody127" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.07, 0, 0, 0, 1, 14.2373, 2.177, -54.3992 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody127"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody127/CollisionShape"]
-mesh = SubResource( 5 )
-material = SubResource( 8 )
+mesh = SubResource( 12 )
+material = SubResource( 13 )
 
 [node name="StaticBody128" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.07, 0, 0, 0, 1, 12.1793, 2.177, -54.3992 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody128"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody128/CollisionShape"]
-mesh = SubResource( 5 )
-material = SubResource( 8 )
+mesh = SubResource( 12 )
+material = SubResource( 13 )
 
 [node name="StaticBody129" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.07, 0, 0, 0, 1, 10.1213, 2.177, -54.3992 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody129"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody129/CollisionShape"]
-mesh = SubResource( 5 )
-material = SubResource( 8 )
+mesh = SubResource( 12 )
+material = SubResource( 13 )
 
 [node name="StaticBody130" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.07, 0, 0, 0, 1, 8.1984, 2.177, -54.3992 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody130"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody130/CollisionShape"]
-mesh = SubResource( 5 )
-material = SubResource( 8 )
+mesh = SubResource( 12 )
+material = SubResource( 13 )
 
 [node name="StaticBody131" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.07, 0, 0, 0, 1, 6.1545, 2.177, -54.3992 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody131"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody131/CollisionShape"]
-mesh = SubResource( 5 )
-material = SubResource( 8 )
+mesh = SubResource( 12 )
+material = SubResource( 13 )
 
 [node name="StaticBody132" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.07, 0, 0, 0, 1, 4.15132, 2.177, -54.3992 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody132"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody132/CollisionShape"]
-mesh = SubResource( 5 )
-material = SubResource( 8 )
+mesh = SubResource( 12 )
+material = SubResource( 13 )
 
 [node name="StaticBody133" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.07, 0, 0, 0, 1, 2.08045, 2.177, -54.3992 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody133"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody133/CollisionShape"]
-mesh = SubResource( 5 )
-material = SubResource( 8 )
+mesh = SubResource( 12 )
+material = SubResource( 13 )
 
 [node name="StaticBody135" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.0616935, -0.519738, 0, 0.0330743, 0.96947, 2.02605, 0.670048, -50.3276 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody135"]
 transform = Transform( 1, 0, 0, 0, 1, -4.76837e-07, 0, 0, 1, 0, -1, 0.040638 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody135/CollisionShape"]
 transform = Transform( 1, 0, 0, 0, 1, -4.76837e-07, 0, 0, 1, -0.00341606, 0.0738525, 0.00876236 )
-mesh = SubResource( 5 )
-material = SubResource( 8 )
+mesh = SubResource( 12 )
+material = SubResource( 13 )
 
 [node name="StaticBody138" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.0616935, -0.519738, 0, 0.0330743, 0.96947, 2.02605, 1.64669, -52.3219 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody138"]
 transform = Transform( 1, 0, 0, 0, 1, -4.76837e-07, 0, 0, 1, 0, -1, 0.040638 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody138/CollisionShape"]
 transform = Transform( 1, 0, 0, 0, 1, -4.76837e-07, 0, 0, 1, -0.00341606, 0.0738525, 0.00876236 )
-mesh = SubResource( 5 )
-material = SubResource( 8 )
+mesh = SubResource( 12 )
+material = SubResource( 13 )
 
 [node name="StaticBody139" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.0616935, -0.519738, 0, 0.0330743, 0.96947, 14.2903, 0.670048, -50.3276 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody139"]
 transform = Transform( 1, 0, 0, 0, 1, -4.76837e-07, 0, 0, 1, 0, -1, 0.040638 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody139/CollisionShape"]
 transform = Transform( 1, 0, 0, 0, 1, -4.76837e-07, 0, 0, 1, -0.00341606, 0.0738525, 0.00876236 )
-mesh = SubResource( 5 )
-material = SubResource( 8 )
+mesh = SubResource( 12 )
+material = SubResource( 13 )
 
 [node name="StaticBody140" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 0.0616935, -0.519738, 0, 0.0330743, 0.96947, 14.2903, 1.64669, -52.3219 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody140"]
 transform = Transform( 1, 0, 0, 0, 1, -4.76837e-07, 0, 0, 1, 0, -1, 0.040638 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody140/CollisionShape"]
 transform = Transform( 1, 0, 0, 0, 1, -4.76837e-07, 0, 0, 1, -0.00341606, 0.0738525, 0.00876236 )
-mesh = SubResource( 5 )
-material = SubResource( 8 )
+mesh = SubResource( 12 )
+material = SubResource( 13 )
 
 [node name="StaticBody42" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0236, 0, -48.2227 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody42"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody42/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody43" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0236, 0, -50.2695 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody43"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody43/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody44" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0236, 0, -52.3043 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody44"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody44/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody9" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0706, 0, -38 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody9"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody9/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody10" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0706, 0, -40.0295 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody10"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody10/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody11" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0706, 0, -42.0763 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody11"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody11/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody12" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0706, 0, -44.1111 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody12"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody12/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody45" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0706, 0, -46.1932 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody45"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody45/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody46" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0706, 0, -48.2227 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody46"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody46/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody47" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0706, 0, -50.2695 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody47"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody47/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody13" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11723, 0, -38 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody13"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody13/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody14" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11723, 0, -40.0295 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody14"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody14/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody15" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11723, 0, -42.0763 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody15"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody15/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody49" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11723, 0, -46.1932 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody49"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody49/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody50" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11723, 0, -48.2227 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody50"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody50/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody51" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11723, 0, -50.2695 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody51"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody51/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody52" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11723, 0, -52.3043 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody52"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody52/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody17" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.14264, 0, -38 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody17"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody17/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody18" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.14264, 0, -40.0295 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody18"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody18/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody19" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.14264, 0, -42.0763 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody19"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody19/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody53" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.14264, 0, -46.1932 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody53"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody53/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody54" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.14264, 0, -48.2227 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody54"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody54/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody55" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.14264, 0, -50.2695 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody55"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody55/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody56" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.14264, 0, -52.3043 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody56"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0.0406303 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody56/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody81" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3351, 2, -54.3299 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody81"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody81/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody82" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2578, 2, -54.3299 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody82"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody82/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody83" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1881, 2, -54.3299 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody83"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody83/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody85" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1729, 2, -54.3299 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody85"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody85/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody86" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.14281, 2, -54.3299 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody86"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody86/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody87" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11399, 2, -54.3299 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody87"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody87/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody88" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05247, 2, -54.3299 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody88"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody88/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody89" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99759, 2, -54.3299 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody89"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody89/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody90" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0167823, 2, -54.3299 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody90"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody90/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody91" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3351, 2, -56.3725 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody91"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody91/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody92" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2578, 2, -56.3725 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody92"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody92/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody93" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1881, 2, -56.3725 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody93"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody93/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody95" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1729, 2, -56.3725 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody95"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody95/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody96" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.14281, 2, -56.3725 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody96"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody96/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody97" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11399, 2, -56.3725 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody97"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody97/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody98" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05247, 2, -56.3725 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody98"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody98/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody99" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99759, 2, -56.3725 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody99"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody99/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody100" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0167823, 2, -56.3725 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody100"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody100/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody101" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3351, 2, -58.3763 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody101"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody101/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody102" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2578, 2, -58.3763 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody102"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody102/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody103" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1881, 2, -58.3763 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody103"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody103/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody105" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1729, 2, -58.3763 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody105"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody105/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody106" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.14281, 2, -58.3763 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody106"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody106/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody107" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11399, 2, -58.3763 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody107"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody107/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody108" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05247, 2, -58.3763 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody108"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody108/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody109" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99759, 2, -58.3763 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody109"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody109/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody110" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0167823, 2, -58.3763 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody110"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody110/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody112" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3351, 2, -60.4274 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody112"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody112/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody113" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2578, 2, -60.4274 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody113"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody113/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody114" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1881, 2, -60.4274 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody114"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody114/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody115" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1729, 2, -60.4274 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody115"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody115/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody116" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.14281, 2, -60.4274 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody116"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody116/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody117" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11399, 2, -60.4274 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody117"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody117/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody118" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05247, 2, -60.4274 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody118"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody118/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody119" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99759, 2, -60.4274 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody119"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody119/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
 
 [node name="StaticBody120" type="StaticBody" parent="Scene/Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0167823, 2, -60.4274 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Scene/Level/StaticBody120"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/Level/StaticBody120/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 12 )
+
+[node name="GridMap" type="GridMap" parent="Scene"]
+data = {
+"cells": PoolIntArray(  )
+}
+__meta__ = {
+"_editor_clip_": 0
+}
 
 [node name="CameraController" parent="." instance=ExtResource( 2 )]
 
@@ -1599,4 +1607,4 @@ visible = false
 [node name="Label" type="Label" parent="GUI"]
 margin_right = 40.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 14 )

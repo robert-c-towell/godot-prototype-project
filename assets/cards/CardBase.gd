@@ -4,8 +4,8 @@ var cardName = "backward"
 
 onready var CardStates = preload("res://assets/cards/CardStates.gd")
 onready var CardEnums = preload("res://assets/cards/cardEnums.gd")
-onready var CardInfo = CardEnums.DATA[CardEnums.get(cardName)]
-onready var CardImagePath = str("res://assets/cards/graphics/",CardInfo.image)
+onready var CardInfo = CardEnums.DATA[CardEnums.cards[cardName]]
+var CardImagePath
 
 onready var originalScale = Vector2(0.75,0.75)
 var startingPosition = 0
@@ -33,9 +33,9 @@ var state
 var previousState
 
 var selectedOption = 1
-
+	
 func _ready():
-	setup()
+	setup()	
 	
 func setup():
 	randomize()
@@ -47,8 +47,11 @@ func setup():
 	$Node2d/VBoxContainer.visible = false
 
 	rect_scale = originalScale
+	rect_position = startingPosition
+	rect_rotation = startingRotation
 	
-	if CardInfo.image:
+	if CardEnums.properties.image in CardInfo:
+		CardImagePath = str("res://assets/cards/graphics/", CardInfo[CardEnums.properties.image])
 		$Node2d/VBoxContainer/TitleTextSpacer/HBoxContainer/MarginContainer/TitleImage.texture = load(CardImagePath)
 		$Node2d/VBoxContainer/MainTextSpacer/MainImage.texture = load(CardImagePath)
 		
@@ -57,8 +60,8 @@ func setup():
 		$Node2d/VBoxContainer/MainTextSpacer/MainImage.visible = true
 		$Node2d/VBoxContainer/MainTextSpacer/Description.visible = false
 		
-		if CardInfo.description:
-			$Node2d/VBoxContainer/MainTextSpacer/ShortDescription.text = CardInfo.description
+		if CardEnums.properties.description in CardInfo:
+			$Node2d/VBoxContainer/MainTextSpacer/ShortDescription.text = CardInfo[CardEnums.properties.description]
 			$Node2d/VBoxContainer/MainTextSpacer/ShortDescription.visible = true
 		else:
 			$Node2d/VBoxContainer/MainTextSpacer/ShortDescription.visible = false
@@ -69,21 +72,21 @@ func setup():
 		$Node2d/VBoxContainer/MainTextSpacer/ShortDescription.visible = false
 		$Node2d/VBoxContainer/MainTextSpacer/Description.visible = true
 		
-		if CardInfo.description:
-			$Node2d/VBoxContainer/MainTextSpacer/Description.text = CardInfo.description
+		if CardEnums.properties.description in CardInfo:
+			$Node2d/VBoxContainer/MainTextSpacer/Description.text = CardInfo[CardEnums.properties.description]
 			$Node2d/VBoxContainer/MainTextSpacer/Description.visible = true
 		else:
 			$Node2d/VBoxContainer/MainTextSpacer/Description.visible = false
 
-func _input(event):
-	match state:
-		CardStates.InMouse, CardStates.InMovementQueue, CardStates.InActionQueue:
-			if event.is_action_pressed("leftclick"):
-				if !isCardSelected:
-					isCardSelected = true
-					previousState = state
-					state = CardStates.InMouse
-					setup = true
+#func _input(event):
+#	match state:
+#		CardStates.InMouse, CardStates.InMovementQueue, CardStates.InActionQueue:
+#			if event.is_action_pressed("leftclick"):
+#				if !isCardSelected:
+#					isCardSelected = true
+#					previousState = state
+#					state = CardStates.InMouse
+#					setup = true
 
 func _on_TextureButton_mouse_entered():
 	match state:
@@ -100,8 +103,9 @@ func _on_TextureButton_mouse_exited():
 			state = CardStates.ExitFocus
 
 func _on_Focus_pressed():
-	if state != CardStates.DrawingCard:
-		get_parent().get_parent().cardClicked(self)
+	match state:
+		CardStates.ReorganizeHand, CardStates.InFocus:
+			get_parent().get_parent().cardClicked(self)
 
 
 #func _physics_process(delta):

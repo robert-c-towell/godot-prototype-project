@@ -114,14 +114,12 @@ func reorganizeCards(delta):
 					var angle = PI/2 + cardSpread * (float(self.get_child_count()+1)/2 - card.cardNumber)
 					arcAngleVector = Vector2(horizontalRadius * cos(angle), -verticalRadius * sin(angle))
 					card.targetRotation = (90 - rad2deg(angle)) / 4
+					card.targetPosition = cardArcCenter + arcAngleVector - card.rect_size/2
 					if cardInFocusNumber >= 0:
-						card.targetPosition = cardArcCenter + arcAngleVector - card.rect_size/2
 						if card.cardNumber < cardInFocusNumber:
 							card.targetPosition.x -= card.cardSize.x / (cardInFocusNumber - card.cardNumber + 0.75)
 						else:
 							card.targetPosition.x += card.cardSize.x / (card.cardNumber - cardInFocusNumber + 0.75)
-					else:
-						card.targetPosition = cardArcCenter + arcAngleVector - card.rect_size/2
 					card.defaultPosition = card.targetPosition
 						
 					card.rect_position = card.startingPosition.linear_interpolate(card.targetPosition, card.t)
