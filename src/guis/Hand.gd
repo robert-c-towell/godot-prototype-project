@@ -11,6 +11,7 @@ var cardSpread = 0.175
 var arcAngleVector = Vector2()
 
 const DRAWTIME = 0.5
+const DISCARDTIME = 0.5
 const REORGANIZETIME = 0.4
 const FOCUSTIME = 0.25
 
@@ -32,7 +33,9 @@ func addCard(card: Node):
 
 func removeCard(card: Node):
 	card.targetRotation = 0
+	card.startingRotation = rect_rotation
 	card.state = CardStates.DiscardingCard
+	card.t = 0
 
 func _physics_process(delta):
 	reorganizeCards(delta)
@@ -74,7 +77,7 @@ func reorganizeCards(delta):
 					card.rect_position = card.startingPosition.linear_interpolate(card.targetPosition, card.t)
 					card.rect_rotation = card.startingRotation * (1-card.t) + card.targetRotation*card.t
 					card.rect_scale = card.startingScale * (1-card.t) + card.originalScale*card.t
-					card.t += delta
+					card.t += delta / float(DISCARDTIME)
 				else:
 					card.rect_position = card.targetPosition
 					card.rect_rotation = card.targetRotation

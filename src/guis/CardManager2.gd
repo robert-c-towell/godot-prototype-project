@@ -3,7 +3,6 @@ extends Control
 const CardBase = preload("res://assets/cards/CardBase.tscn")
 const CardStates = preload("res://assets/cards/CardStates.gd")
 const CardTypes = preload("res://assets/cards/cardEnums.gd")
-onready var Hand = $Hand
 
 var deck = ["forward","forward","forward","forward","forward","backward","backward","left","left","left","right","right","right"]
 var discardPile = []
@@ -13,6 +12,7 @@ var playerCharacter
 func _ready():
 	randomize()
 	deck.shuffle()
+
 	var initialWait = 0.75
 	yield(get_tree().create_timer(initialWait), "timeout")
 	for n in 5:
@@ -51,6 +51,7 @@ func drawCard():
 
 func discardCard(card: Node):
 	card.targetPosition = $DiscardSpacer/Control/TextureButton.rect_global_position - (card.cardSize / 4)
+	card.startingPosition = card.rect_position
 	$Hand.removeCard(card)
 	
 	discardPile.push_front(card.cardName)
