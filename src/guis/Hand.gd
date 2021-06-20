@@ -15,6 +15,7 @@ const REORGANIZETIME = 0.4
 const FOCUSTIME = 0.25
 
 var cardInFocusNumber = -1
+var cardDiscarded = false
 
 func addCard(card: Node):
 	self.add_child(card)
@@ -39,7 +40,16 @@ func _physics_process(delta):
 func reorganizeCards(delta):
 	var Cards = self.get_children()
 	
+	var renumberCards = false
+	if cardDiscarded:
+		cardDiscarded = false
+		renumberCards = true
+	
+	var count = 1
 	for card in Cards:
+		if renumberCards:
+			card.cardNumber = count
+			count += 1
 		match card.state:
 			CardStates.DrawingCard:
 				if card.t <= 1:
@@ -55,20 +65,25 @@ func reorganizeCards(delta):
 				else:
 					card.rect_position = card.targetPosition
 					card.rect_rotation = card.targetRotation
-					card.rect_scale.x = card.originalScale.x
+					card.rect_scale = card.originalScale
 					card.t = 0
 					card.state = CardStates.ReorganizeHand
+
 			CardStates.DiscardingCard:
 				if card.t <= 1:
 					card.rect_position = card.startingPosition.linear_interpolate(card.targetPosition, card.t)
 					card.rect_rotation = card.startingRotation * (1-card.t) + card.targetRotation*card.t
-					card.rect_scale.x = card.originalScale.x * abs(2*card.t - 1)
-					card.t += delta / float(DRAWTIME)
+					card.rect_scale = card.startingScale * (1-card.t) + card.originalScale*card.t
+					card.t += delta
 				else:
 					card.rect_position = card.targetPosition
 					card.rect_rotation = card.targetRotation
-					card.rect_scale.x = card.originalScale.x
-					card.t = 0
+					card.rect_scale = card.originalScale
+					get_parent().get_node("DiscardSpacer/Control/Discard").add_child(card)
+					self.remove_child(card)
+					cardDiscarded = true
+					cardInFocusNumber = -1
+
 			CardStates.InFocus:
 				cardInFocusNumber = card.cardNumber
 				if card.setup:
@@ -87,6 +102,7 @@ func reorganizeCards(delta):
 			CardStates.ExitFocus:
 				cardInFocusNumber = -1
 				card.state = CardStates.ReorganizeHand
+
 			CardStates.ReorganizeHand:
 				card.get_child(0).z_index = 0
 				if card.setup:
