@@ -12,8 +12,8 @@ var isRotating = false
 func _process(delta):
 	if isMoving:
 		moveR()
-#	if isRotating:
-#		rotateR()
+	if isRotating:
+		rotateR()
 
 func moveR():
 	var velocity
@@ -29,13 +29,14 @@ func moveR():
 		isMoving = false
 
 func rotateR():
-	var velocity
-	var angle = abs(rotation_degrees.y - targetPosition.y)
-	if angle > 0.05:
-		rotation_degrees.y += angle * rotateSpeed
-	else:
-		rotation_degrees = targetPosition
-		isMoving = false
+#	var velocity = Vector3.FORWARD
+#	velocity.x = abs(rotation_degrees.y - targetPosition.y)
+#	if velocity.x > 0.1:
+#		var newRotation = rotation_degrees.y + lerp_angle(rotation_degrees.y, atan2(-velocity.x, -velocity.z), rotateSpeed)
+#		rotation_degrees.y = normalizeRotation(newRotation)
+#	else:
+	rotation_degrees.y = normalizeRotation(targetRotation.y)
+	isRotating = false
 
 func moveRobot(direction, distance):
 	if !isMoving:
@@ -76,17 +77,17 @@ func normalizeRotation(r):
 	return r
 
 func rotateRobot(direction):
-#	if !isRotating:
-#		targetRotation = rotation_degrees
+	if !isRotating:
+		targetRotation = rotation_degrees
 	match direction:
 		"left":
-#			targetRotation.y += 90
-			rotation_degrees.y += 90
+			targetRotation.y += 90
+#			rotation_degrees.y += 90
 		"right":
-#			targetRotation.y -= 90
+			targetRotation.y -= 90
 			rotation_degrees.y -= 90
 		"u-turn":
-#			targetRotation.y += 180
-			rotation_degrees.y += 180
-	rotation_degrees.y = normalizeRotation(rotation_degrees.y)
-#	isRotating = true
+			targetRotation.y += 180
+#			rotation_degrees.y += 180
+#	rotation_degrees.y = normalizeRotation(rotation_degrees.y)
+	isRotating = true
