@@ -3,17 +3,19 @@ extends KinematicBody
 const TILESIZE = 2.1
 
 var moveSpeed = 6
-var rotateSpeed = 1
+var rotateSpeed = 100
 var targetPosition = Vector3()
 var targetRotation = Vector3()
 var isMoving = false
 var isRotating = false
 
+var rotateT = 0
+
 func _process(delta):
 	if isMoving:
 		moveR()
 	if isRotating:
-		rotateR()
+		rotateR(delta)
 
 func moveR():
 	var velocity
@@ -28,15 +30,18 @@ func moveR():
 		rotation_degrees.y = normalizeRotation(rotation_degrees.y)
 		isMoving = false
 
-func rotateR():
-#	var velocity = Vector3.FORWARD
-#	velocity.x = abs(rotation_degrees.y - targetPosition.y)
-#	if velocity.x > 0.1:
-#		var newRotation = rotation_degrees.y + lerp_angle(rotation_degrees.y, atan2(-velocity.x, -velocity.z), rotateSpeed)
-#		rotation_degrees.y = normalizeRotation(newRotation)
-#	else:
-	rotation_degrees.y = normalizeRotation(targetRotation.y)
-	isRotating = false
+func rotateR(delta):
+	var currentRotation = Vector3.ZERO
+	currentRotation.x = rotation_degrees.y
+	var diff = currentRotation.direction_to(targetRotation)
+	if rad2deg(diff.x) > 5:
+		var newRotation = lerp_angle(deg2rad(rotation_degrees.y), deg2rad(targetRotation.x), rotateT * rotateSpeed)
+		rotation_degrees.y = normalizeRotation(newRotation)
+		rotateT += delta
+	else:
+		rotation_degrees.y = normalizeRotation(targetRotation.x)
+		isRotating = false
+		rotateT = 0
 
 func moveRobot(direction, distance):
 	if !isMoving:
@@ -78,16 +83,18 @@ func normalizeRotation(r):
 
 func rotateRobot(direction):
 	if !isRotating:
-		targetRotation = rotation_degrees
+		targetRotation = Vector3.ZERO
+		targetRotation.x = rotation_degrees.y
 	match direction:
 		"left":
-			targetRotation.y += 90
+			targetRotation.x += 90
 #			rotation_degrees.y += 90
 		"right":
-			targetRotation.y -= 90
-			rotation_degrees.y -= 90
+			targetRotation.x -= 90
+#			rotation_degrees.x -= 90
 		"u-turn":
-			targetRotation.y += 180
-#			rotation_degrees.y += 180
+			targetRotation.x += 180
+#			rotation_degrees.x += 180
 #	rotation_degrees.y = normalizeRotation(rotation_degrees.y)
+	targetRotation.x = normalizeRotation(targetRotation.x)
 	isRotating = true

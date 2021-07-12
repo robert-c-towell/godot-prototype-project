@@ -34,7 +34,7 @@ script = ExtResource( 5 )
 script = ExtResource( 7 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Scene/PlayerCharacter"]
-transform = Transform( 1, 0, 0, 0, -0.00371754, 0.999993, 0, -0.999993, -0.00371754, 0, 0.5, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, 0 )
 mesh = SubResource( 1 )
 material = SubResource( 2 )
 
